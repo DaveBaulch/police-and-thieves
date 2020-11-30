@@ -2,7 +2,6 @@ import './App.css';
 import React from 'react';
 import axios from 'axios';
 import Dropdown from './components/Dropdown';
-import Searches from './components/Searches';
 
 class App extends React.Component {
   state = {
@@ -11,7 +10,6 @@ class App extends React.Component {
     selectedForceName: '',
     selectedForceUrl: '',
     selectedForceDescription: '',
-    selectedSeachData: '',
     latitude: null,
     longitude: null,
     errorMessage: ''
@@ -31,25 +29,6 @@ class App extends React.Component {
         this.setState({ selectedForceName: response.data.name });
         this.setState({ selectedForceUrl: response.data.url });
         this.setState({ selectedForceDescription: response.data.description });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
-  getSearches = (event) => {
-    console.log('Clicked');
-
-    axios
-      .get(
-        'https://data.police.uk/api/stops-street?lat=' +
-          this.state.latitude +
-          '&lng=' +
-          this.state.longitude
-      )
-      .then((response) => {
-        console.log(response.data);
-        this.setState({ selectedSearchData: response.data });
       })
       .catch(function (error) {
         console.log(error);
@@ -81,29 +60,26 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>UK force data API</h1>
-
-        <h2>Select a force:</h2>
         <Dropdown
           forces={this.state.forces}
           onSelectChange={this.onSelectChange}
         />
 
         {this.state.selectedForce && (
-          <h3>Selected force: {this.state.selectedForce}</h3>
+          <h2>Selected force: {this.state.selectedForce}</h2>
         )}
 
         {this.state.selectedForceName && (
-          <h3>Selected force name: {this.state.selectedForceName}</h3>
+          <h2>Selected force name: {this.state.selectedForceName}</h2>
         )}
 
         {this.state.selectedForceUrl && (
-          <h3>
+          <h2>
             Selected force URL:{' '}
             <a href={this.state.selectedForceUrl}>
               {this.state.selectedForceUrl}
             </a>
-          </h3>
+          </h2>
         )}
 
         <div
@@ -112,15 +88,10 @@ class App extends React.Component {
           }}
         ></div>
 
-        <h2>
-          Your current coordinates: {this.state.latitude},{' '}
-          {this.state.longitude}
-        </h2>
-        <button onClick={this.getSearches}>
-          Get stop and searches for these co-ordinates
-        </button>
-
-        <Searches searches={this.state.selectedSearchData} />
+        <h1>
+          Current coordinates: {this.state.latitude}, {this.state.longitude}
+        </h1>
+        
       </div>
     );
   }

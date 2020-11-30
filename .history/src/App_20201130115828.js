@@ -119,8 +119,6 @@ class App extends React.Component {
         <button onClick={this.getSearches}>
           Get stop and searches for these co-ordinates
         </button>
-
-        <Searches searches={this.state.selectedSearchData} />
       </div>
     );
   }

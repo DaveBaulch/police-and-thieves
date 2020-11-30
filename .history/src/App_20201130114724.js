@@ -2,7 +2,6 @@ import './App.css';
 import React from 'react';
 import axios from 'axios';
 import Dropdown from './components/Dropdown';
-import Searches from './components/Searches';
 
 class App extends React.Component {
   state = {
@@ -11,7 +10,6 @@ class App extends React.Component {
     selectedForceName: '',
     selectedForceUrl: '',
     selectedForceDescription: '',
-    selectedSeachData: '',
     latitude: null,
     longitude: null,
     errorMessage: ''
@@ -37,23 +35,8 @@ class App extends React.Component {
       });
   };
 
-  getSearches = (event) => {
+  onSearchesClick = (event) => {
     console.log('Clicked');
-
-    axios
-      .get(
-        'https://data.police.uk/api/stops-street?lat=' +
-          this.state.latitude +
-          '&lng=' +
-          this.state.longitude
-      )
-      .then((response) => {
-        console.log(response.data);
-        this.setState({ selectedSearchData: response.data });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
   };
 
   componentDidMount() {
@@ -116,11 +99,9 @@ class App extends React.Component {
           Your current coordinates: {this.state.latitude},{' '}
           {this.state.longitude}
         </h2>
-        <button onClick={this.getSearches}>
+        <button onSearchesClick={this.getSearches}>
           Get stop and searches for these co-ordinates
         </button>
-
-        <Searches searches={this.state.selectedSearchData} />
       </div>
     );
   }

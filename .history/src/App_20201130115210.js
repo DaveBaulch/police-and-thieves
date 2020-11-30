@@ -2,7 +2,6 @@ import './App.css';
 import React from 'react';
 import axios from 'axios';
 import Dropdown from './components/Dropdown';
-import Searches from './components/Searches';
 
 class App extends React.Component {
   state = {
@@ -119,8 +118,7 @@ class App extends React.Component {
         <button onClick={this.getSearches}>
           Get stop and searches for these co-ordinates
         </button>
-
-        <Searches searches={this.state.selectedSearchData} />
+        {this.state.selectedSearchData}
       </div>
     );
   }
