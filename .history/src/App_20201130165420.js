@@ -17,7 +17,7 @@ class App extends React.Component {
     longitude: null,
     errorMessage: '',
     genderFilterTerm: 'Male',
-    offenceFilterTerm: 'Controlled drugs',
+    typeFilterTerm: 'Controlled drugs',
     searchDataLoaded: false
   };
 
@@ -52,7 +52,7 @@ class App extends React.Component {
     console.log('Offence filter changed');
     const offenceTerm = event.target.options[event.target.selectedIndex].value;
     console.log(offenceTerm);
-    this.setState({ offenceFilterTerm: offenceTerm });
+    this.setState({ genderFilterTerm: offenceTerm });
   };
 
   getSearches = () => {
@@ -170,7 +170,7 @@ class App extends React.Component {
             searches={this.state.selectedSearchData.filter(
               (item) =>
                 (item.gender = this.state.genderFilterTerm) &&
-                (item.object_of_search = this.state.offenceFilterTerm)
+                (item.object_of_search = this.state.typeFilterTerm)
             )}
           />
         )}

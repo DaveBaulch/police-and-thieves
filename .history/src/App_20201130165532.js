@@ -170,7 +170,7 @@ class App extends React.Component {
             searches={this.state.selectedSearchData.filter(
               (item) =>
                 (item.gender = this.state.genderFilterTerm) &&
-                (item.object_of_search = this.state.offenceFilterTerm)
+                (item.object_of_search = this.state.typeFilterTerm)
             )}
           />
         )}

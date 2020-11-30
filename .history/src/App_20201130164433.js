@@ -12,13 +12,13 @@ class App extends React.Component {
     selectedForceName: '',
     selectedForceUrl: '',
     selectedForceDescription: '',
-    selectedSeachData: [],
+    selectedSeachData: '',
     latitude: null,
     longitude: null,
     errorMessage: '',
     genderFilterTerm: 'Male',
-    offenceFilterTerm: 'Controlled drugs',
-    searchDataLoaded: false
+    searchDataLoaded: false,
+    filter
   };
 
   onSelectChange = (event) => {
@@ -46,13 +46,6 @@ class App extends React.Component {
     const genderTerm = event.target.options[event.target.selectedIndex].value;
     console.log(genderTerm);
     this.setState({ genderFilterTerm: genderTerm });
-  };
-
-  onOffenceChange = (event) => {
-    console.log('Offence filter changed');
-    const offenceTerm = event.target.options[event.target.selectedIndex].value;
-    console.log(offenceTerm);
-    this.setState({ offenceFilterTerm: offenceTerm });
   };
 
   getSearches = () => {
@@ -146,31 +139,18 @@ class App extends React.Component {
 
         {this.state.selectedSearchData && (
           <React.Fragment>
-            <h2>Filter results</h2>
-            <label htmlFor="genderFilter">Gender</label>
+            <label htmlFor="genderFilter">Filter results</label>
             <select id="genderFilter" onChange={this.onGenderChange}>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
-
-            <label htmlFor="offenceFilter">Offence</label>
-            <select id="offenceFilter" onChange={this.onOffenceChange}>
-              <option value="Controlled drugs">Controlled drugs</option>
-              <option value="Stolen goods">Stolen goods</option>
-              <option value="Offensive weaponss">Offensive weapons</option>
-              <option value="Article for use in theft">
-                Article for use in theft
-              </option>
-            </select>
-          </React.Fragment>
+          </React.Fragment>    
         )}
 
         {this.state.selectedSearchData && (
           <Searches
             searches={this.state.selectedSearchData.filter(
-              (item) =>
-                (item.gender = this.state.genderFilterTerm) &&
-                (item.object_of_search = this.state.offenceFilterTerm)
+              (item) => (item.gender = this.state.genderFilterTerm)
             )}
           />
         )}
