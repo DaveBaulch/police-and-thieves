@@ -89,7 +89,7 @@ class App extends React.Component {
           selectedSearchData: selectedSearchData,
           searchDataLoaded: true,
           genderOptions: genderOptions.filter(Boolean), // remove null values
-          offenceOptions: offenceOptions.filter(Boolean) // remove null values
+          offenceOptions: offenceOptions.filter(Boolean)
         });
       })
       .catch(function (error) {
@@ -151,16 +151,18 @@ class App extends React.Component {
           Your current coordinates: {this.state.latitude},{' '}
           {this.state.longitude}
         </h2>
+
         <MapContainer lat={this.state.latitude} long={this.state.longitude} />
+
         <hr />
+
         {!this.state.searchDataLoaded && (
           <button onClick={this.getSearches}>
             Get stop and searches for these co-ordinates
           </button>
         )}
-        <br />
 
-        {/*  TODO : create filter components and pass options in from state  */}
+        <br />
 
         {this.state.selectedSearchData && (
           <React.Fragment>
@@ -175,13 +177,14 @@ class App extends React.Component {
             <select id="offenceFilter" onChange={this.onOffenceChange}>
               <option value="Controlled drugs">Controlled drugs</option>
               <option value="Stolen goods">Stolen goods</option>
-              <option value="Offensive weapons">Offensive weapons</option>
+              <option value="Offensive weaponss">Offensive weapons</option>
               <option value="Article for use in theft">
                 Article for use in theft
               </option>
             </select>
           </React.Fragment>
         )}
+
         {this.state.selectedSearchData && (
           <Searches
             searches={this.state.selectedSearchData.filter(
@@ -191,6 +194,7 @@ class App extends React.Component {
             )}
           />
         )}
+
         <hr />
       </div>
     );

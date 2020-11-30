@@ -175,7 +175,7 @@ class App extends React.Component {
             <select id="offenceFilter" onChange={this.onOffenceChange}>
               <option value="Controlled drugs">Controlled drugs</option>
               <option value="Stolen goods">Stolen goods</option>
-              <option value="Offensive weapons">Offensive weapons</option>
+              <option value="Offensive weaponss">Offensive weapons</option>
               <option value="Article for use in theft">
                 Article for use in theft
               </option>

@@ -69,27 +69,17 @@ class App extends React.Component {
       )
       .then((response) => {
         console.log(response.data);
-
-        const selectedSearchData = response.data;
-
-        // TODO - get the tpes of search/gender available from the returned values and create filter components
-        let genderOptions = Array.from(
-          new Set(selectedSearchData.map(({ gender }) => gender))
-        );
-        console.log(genderOptions);
-
-        let offenceOptions = Array.from(
-          new Set(
-            selectedSearchData.map(({ object_of_search }) => object_of_search)
-          )
-        );
-        console.log(offenceOptions);
-
         this.setState({
-          selectedSearchData: selectedSearchData,
-          searchDataLoaded: true,
-          genderOptions: genderOptions.filter(Boolean), // remove null values
-          offenceOptions: offenceOptions.filter(Boolean) // remove null values
+          selectedSearchData: response.data,
+          searchDataLoaded: true
+
+          // TODO - get the tpes of search/gender available from the returned values and create filter components
+          let genderOptions =[];
+          selectedSearchData.forEach(function(option) {
+            if (!cars.includes(car["genderOptions"]) {
+                genderOptions.push(car["genderOptions"]);
+            }
+
         });
       })
       .catch(function (error) {
@@ -151,16 +141,18 @@ class App extends React.Component {
           Your current coordinates: {this.state.latitude},{' '}
           {this.state.longitude}
         </h2>
+
         <MapContainer lat={this.state.latitude} long={this.state.longitude} />
+
         <hr />
+
         {!this.state.searchDataLoaded && (
           <button onClick={this.getSearches}>
             Get stop and searches for these co-ordinates
           </button>
         )}
-        <br />
 
-        {/*  TODO : create filter components and pass options in from state  */}
+        <br />
 
         {this.state.selectedSearchData && (
           <React.Fragment>
@@ -175,13 +167,14 @@ class App extends React.Component {
             <select id="offenceFilter" onChange={this.onOffenceChange}>
               <option value="Controlled drugs">Controlled drugs</option>
               <option value="Stolen goods">Stolen goods</option>
-              <option value="Offensive weapons">Offensive weapons</option>
+              <option value="Offensive weaponss">Offensive weapons</option>
               <option value="Article for use in theft">
                 Article for use in theft
               </option>
             </select>
           </React.Fragment>
         )}
+
         {this.state.selectedSearchData && (
           <Searches
             searches={this.state.selectedSearchData.filter(
@@ -191,6 +184,7 @@ class App extends React.Component {
             )}
           />
         )}
+
         <hr />
       </div>
     );
