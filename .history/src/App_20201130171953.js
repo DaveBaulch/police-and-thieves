@@ -19,7 +19,7 @@ class App extends React.Component {
     genderOptions: [],
     offenceOptions: [],
     genderFilterTerm: '',
-    offenceFilterTerm: '',
+    offenceFilterTerm: 'Controlled drugs',
     searchDataLoaded: false
   };
 

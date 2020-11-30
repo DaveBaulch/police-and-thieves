@@ -18,8 +18,8 @@ class App extends React.Component {
     errorMessage: '',
     genderOptions: [],
     offenceOptions: [],
-    genderFilterTerm: '',
-    offenceFilterTerm: '',
+    genderFilterTerm: 'Male',
+    offenceFilterTerm: 'Controlled drugs',
     searchDataLoaded: false
   };
 
@@ -83,7 +83,7 @@ class App extends React.Component {
             selectedSearchData.map(({ object_of_search }) => object_of_search)
           )
         );
-
+   
         console.log(offenceOptions);
 
         this.setState({
@@ -92,7 +92,7 @@ class App extends React.Component {
           genderOptions: genderOptions.filter(Boolean), // remove null values
           offenceOptions: offenceOptions.filter(Boolean), // remove null values
           genderFilterTerm: genderOptions[0],
-          offenceFilterTerm: offenceOptions[0]
+          offenceFilterTerm: offenceOptions
         });
       })
       .catch(function (error) {

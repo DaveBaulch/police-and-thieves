@@ -18,8 +18,8 @@ class App extends React.Component {
     errorMessage: '',
     genderOptions: [],
     offenceOptions: [],
-    genderFilterTerm: '',
-    offenceFilterTerm: '',
+    genderFilterTerm: 'Male',
+    offenceFilterTerm: 'Controlled drugs',
     searchDataLoaded: false
   };
 
