@@ -17,7 +17,7 @@ class App extends React.Component {
     longitude: null,
     errorMessage: '',
     genderFilterTerm: 'Male',
-    searchDataLoaded: false
+    searchDataLoaded: 'false'
   };
 
   onSelectChange = (event) => {

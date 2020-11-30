@@ -16,8 +16,7 @@ class App extends React.Component {
     latitude: null,
     longitude: null,
     errorMessage: '',
-    genderFilterTerm: 'Male',
-    searchDataLoaded: false
+    genderFilterTerm: 'Male'
   };
 
   onSelectChange = (event) => {
@@ -60,7 +59,6 @@ class App extends React.Component {
       .then((response) => {
         console.log(response.data);
         this.setState({ selectedSearchData: response.data });
-        this.setState({ searchDataLoaded: true });
       })
       .catch(function (error) {
         console.log(error);
@@ -127,11 +125,10 @@ class App extends React.Component {
 
         <hr />
 
-        {!this.state.searchDataLoaded && (
-          <button onClick={this.getSearches}>
-            Get stop and searches for these co-ordinates
-          </button>
-        )}
+         {this.state.selectedSearchData && (
+        <button onClick={this.getSearches}>
+          Get stop and searches for these co-ordinates
+        </button>
 
         <br />
 

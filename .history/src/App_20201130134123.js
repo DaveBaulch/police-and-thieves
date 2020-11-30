@@ -16,8 +16,8 @@ class App extends React.Component {
     latitude: null,
     longitude: null,
     errorMessage: '',
-    genderFilterTerm: 'Male',
-    searchDataLoaded: false
+    genderFilterTerm: 'Male'
+    dataLoaded: 'false'
   };
 
   onSelectChange = (event) => {
@@ -33,6 +33,7 @@ class App extends React.Component {
         console.log(response.data);
         this.setState({ selectedForceName: response.data.name });
         this.setState({ selectedForceUrl: response.data.url });
+        this.setState({ selectedForceDescription: response.data.description });
         this.setState({ selectedForceDescription: response.data.description });
       })
       .catch(function (error) {
@@ -60,7 +61,6 @@ class App extends React.Component {
       .then((response) => {
         console.log(response.data);
         this.setState({ selectedSearchData: response.data });
-        this.setState({ searchDataLoaded: true });
       })
       .catch(function (error) {
         console.log(error);
@@ -127,11 +127,9 @@ class App extends React.Component {
 
         <hr />
 
-        {!this.state.searchDataLoaded && (
-          <button onClick={this.getSearches}>
-            Get stop and searches for these co-ordinates
-          </button>
-        )}
+        <button onClick={this.getSearches}>
+          Get stop and searches for these co-ordinates
+        </button>
 
         <br />
 
