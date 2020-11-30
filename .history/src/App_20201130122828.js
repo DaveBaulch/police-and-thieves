@@ -112,7 +112,7 @@ class App extends React.Component {
           }}
         ></div>
 
-        <hr />
+        <hr 
 
         <h2>
           Your current coordinates: {this.state.latitude},{' '}
