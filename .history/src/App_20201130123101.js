@@ -3,7 +3,6 @@ import React from 'react';
 import axios from 'axios';
 import Dropdown from './components/Dropdown';
 import Searches from './components/Searches';
-import MapContainer from './components/MapContainer';
 
 class App extends React.Component {
   state = {
@@ -83,17 +82,21 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>UK force data API</h1>
+
         <h2>Select a force:</h2>
         <Dropdown
           forces={this.state.forces}
           onSelectChange={this.onSelectChange}
         />
+
         {this.state.selectedForce && (
           <h3>Selected force: {this.state.selectedForce}</h3>
         )}
+
         {this.state.selectedForceName && (
           <h3>Selected force name: {this.state.selectedForceName}</h3>
         )}
+
         {this.state.selectedForceUrl && (
           <h3>
             Selected force URL:{' '}
@@ -102,30 +105,25 @@ class App extends React.Component {
             </a>
           </h3>
         )}
+
         <div
           dangerouslySetInnerHTML={{
             __html: this.state.selectedForceDescription
           }}
         ></div>
+
         <hr />
+
         <h2>
           Your current coordinates: {this.state.latitude},{' '}
           {this.state.longitude}
         </h2>
-
-        <MapContainer lat={this.state.latitude} long={this.state.longitude} />
-
-        <hr />
-
         <button onClick={this.getSearches}>
           Get stop and searches for these co-ordinates
         </button>
 
-        {this.state.selectedSearchData && (
-          <Searches searches={this.state.selectedSearchData} />
-        )}
-
-        <hr />
+         {this.state.selectedForceName && (
+        <Searches searches={this.state.selectedSearchData} />
       </div>
     );
   }

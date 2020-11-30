@@ -124,8 +124,6 @@ class App extends React.Component {
         {this.state.selectedSearchData && (
           <Searches searches={this.state.selectedSearchData} />
         )}
-
-        <hr />
       </div>
     );
   }

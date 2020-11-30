@@ -121,10 +121,6 @@ class App extends React.Component {
           Get stop and searches for these co-ordinates
         </button>
 
-        {this.state.selectedSearchData && (
-          <Searches searches={this.state.selectedSearchData} />
-        )}
-
         <hr />
       </div>
     );

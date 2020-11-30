@@ -83,7 +83,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>UK force data API</h1>
-        <h2>Select a force:</h2>
+        <h2>Select a force: </h2>
         <Dropdown
           forces={this.state.forces}
           onSelectChange={this.onSelectChange}

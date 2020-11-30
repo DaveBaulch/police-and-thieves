@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import Dropdown from './components/Dropdown';
 import Searches from './components/Searches';
-import MapContainer from './components/MapContainer';
+import GoogleMap from './components/MapContainer';
 
 class App extends React.Component {
   state = {
@@ -112,20 +112,14 @@ class App extends React.Component {
           Your current coordinates: {this.state.latitude},{' '}
           {this.state.longitude}
         </h2>
-
-        <MapContainer lat={this.state.latitude} long={this.state.longitude} />
-
-        <hr />
-
         <button onClick={this.getSearches}>
           Get stop and searches for these co-ordinates
         </button>
-
         {this.state.selectedSearchData && (
           <Searches searches={this.state.selectedSearchData} />
         )}
-
         <hr />
+        <GoogleMap />
       </div>
     );
   }

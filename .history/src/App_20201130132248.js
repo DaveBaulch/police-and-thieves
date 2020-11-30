@@ -113,17 +113,15 @@ class App extends React.Component {
           {this.state.longitude}
         </h2>
 
-        <MapContainer lat={this.state.latitude} long={this.state.longitude} />
+        {this.state.selectedSearchData && (
+          <Searches searches={this.state.selectedSearchData} />
+        )}
 
-        <hr />
+        <MapContainer lat={this.state.latitude} long={this.state.longitude} />
 
         <button onClick={this.getSearches}>
           Get stop and searches for these co-ordinates
         </button>
-
-        {this.state.selectedSearchData && (
-          <Searches searches={this.state.selectedSearchData} />
-        )}
 
         <hr />
       </div>

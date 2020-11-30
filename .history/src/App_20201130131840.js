@@ -112,19 +112,12 @@ class App extends React.Component {
           Your current coordinates: {this.state.latitude},{' '}
           {this.state.longitude}
         </h2>
-
-        <MapContainer lat={this.state.latitude} long={this.state.longitude} />
-
-        <hr />
-
         <button onClick={this.getSearches}>
           Get stop and searches for these co-ordinates
         </button>
-
         {this.state.selectedSearchData && (
           <Searches searches={this.state.selectedSearchData} />
         )}
-
         <hr />
       </div>
     );
