@@ -16,7 +16,7 @@ class App extends React.Component {
     latitude: null,
     longitude: null,
     errorMessage: '',
-    genderFilterTerm: 'Male'
+    genderFilterTerm: ''
   };
 
   onSelectChange = (event) => {
@@ -143,8 +143,8 @@ class App extends React.Component {
 
         {this.state.selectedSearchData && (
           <Searches
-            searches={this.state.selectedSearchData.filter(
-              (item) => (item.gender = this.state.genderFilterTerm)
+            searches={this.state.selectedSearchData.filter((gender) =>
+              gender.includes('J')
             )}
           />
         )}
