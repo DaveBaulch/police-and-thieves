@@ -112,7 +112,7 @@ class App extends React.Component {
   };
 
   onSearchItemSelect = (search) => {
-    console.log('From the list!', search);
+    console.log('From the app!', search);
     this.setState({ selectedSeachItem: search });
   };
 
@@ -210,15 +210,17 @@ class App extends React.Component {
               )}
 
               <div className="ui row">
-                <div className="six wide column" style={{ listStyle: 'none' }}>
+                <div className="five wide column" style={{ listStyle: 'none' }}>
                   {this.state.searchDataLoaded && (
                     <Searches
                       searches={this.state.filteredSearchData}
-                      onSearchItemSelect={this.onSearchItemSelect}
-                    />
+                      onSeacrSelect={this.onVideoSelect}
+                     />
                   )}
                 </div>
-                <div className="ten wide column">TODO: item detail here</div>
+                <div className="eleven wide column">
+                  Selected item will go here
+                </div>
               </div>
             </div>
           </div>

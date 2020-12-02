@@ -2,10 +2,10 @@ import './Searches.css';
 import React from 'react';
 
 const Searches = ({ searches, onSearchItemSelect }) => {
-  console.log('Props:' + searches);
+  console.log('Props:' + props.searches);
   let searchList = null;
 
-  if (searches) {
+  if (props.searches) {
     searchList = searches.map((search, index) => {
       return (
         <li
@@ -23,8 +23,7 @@ const Searches = ({ searches, onSearchItemSelect }) => {
   }
   return (
     <div>
-      <h3>Click on an item to see full detail</h3>
-      <ul style={{ padding: 0 }}>{searchList}</ul>
+      Searches: <ul style={{ padding: 0 }}>{searchList}</ul>
     </div>
   );
 };

@@ -210,7 +210,7 @@ class App extends React.Component {
               )}
 
               <div className="ui row">
-                <div className="six wide column" style={{ listStyle: 'none' }}>
+                <div className="five wide column" style={{ listStyle: 'none' }}>
                   {this.state.searchDataLoaded && (
                     <Searches
                       searches={this.state.filteredSearchData}
@@ -218,7 +218,7 @@ class App extends React.Component {
                     />
                   )}
                 </div>
-                <div className="ten wide column">TODO: item detail here</div>
+                <div className="eleven wide column"></div>
               </div>
             </div>
           </div>

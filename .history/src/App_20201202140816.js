@@ -24,8 +24,7 @@ class App extends React.Component {
       offenceFilterTerm: ''
     },
     filteredSearchData: [],
-    searchDataLoaded: false,
-    selectedSeachItem: null
+    searchDataLoaded: false
   };
 
   onSelectChange = (event) => {
@@ -111,11 +110,6 @@ class App extends React.Component {
       });
   };
 
-  onSearchItemSelect = (search) => {
-    console.log('From the list!', search);
-    this.setState({ selectedSeachItem: search });
-  };
-
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
       (position) =>
@@ -184,7 +178,7 @@ class App extends React.Component {
           <div className="ui segment">
             <div className="ui grid">
               <div className="ui row">
-                <div className="five wide column">
+
                   {!this.state.searchDataLoaded && (
                     <button onClick={this.getSearches}>
                       Get stop and searches for these co-ordinates
@@ -193,6 +187,7 @@ class App extends React.Component {
                 </div>
               </div>
 
+              
               {this.state.selectedSearchData && (
                 <React.Fragment>
                   <h2>Filter results</h2>
@@ -210,15 +205,14 @@ class App extends React.Component {
               )}
 
               <div className="ui row">
-                <div className="six wide column" style={{ listStyle: 'none' }}>
+                <div className="five wide column" style={{ listStyle: 'none' }}>
                   {this.state.searchDataLoaded && (
-                    <Searches
-                      searches={this.state.filteredSearchData}
-                      onSearchItemSelect={this.onSearchItemSelect}
-                    />
+                    <Searches searches={this.state.filteredSearchData} />
                   )}
                 </div>
-                <div className="ten wide column">TODO: item detail here</div>
+                <div className="eleven wide column">
+                  Selected item will go here
+                </div>
               </div>
             </div>
           </div>

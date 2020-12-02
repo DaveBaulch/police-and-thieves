@@ -1,18 +1,18 @@
 import './Searches.css';
 import React from 'react';
 
-const Searches = ({ searches, onSearchItemSelect }) => {
-  console.log('Props:' + searches);
+const Searches = (props) => {
+  console.log('Props:' + props.searches);
   let searchList = null;
 
-  if (searches) {
-    searchList = searches.map((search, index) => {
+  if (props.searches) {
+    searchList = props.searches.map((search, index) => {
       return (
         <li
           key={index}
           className="ui segment search-item"
           style={{ listStyle: 'none' }}
-          onClick={() => onSearchItemSelect(search)}
+          onClick={() => onSelect(search)}
         >
           Gender: {search.gender}, <br />
           Age range: {search.age_range}, <br />
@@ -23,8 +23,7 @@ const Searches = ({ searches, onSearchItemSelect }) => {
   }
   return (
     <div>
-      <h3>Click on an item to see full detail</h3>
-      <ul style={{ padding: 0 }}>{searchList}</ul>
+      Searches: <ul style={{ padding: 0 }}>{searchList}</ul>
     </div>
   );
 };

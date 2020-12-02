@@ -24,8 +24,7 @@ class App extends React.Component {
       offenceFilterTerm: ''
     },
     filteredSearchData: [],
-    searchDataLoaded: false,
-    selectedSeachItem: null
+    searchDataLoaded: false
   };
 
   onSelectChange = (event) => {
@@ -111,11 +110,6 @@ class App extends React.Component {
       });
   };
 
-  onSearchItemSelect = (search) => {
-    console.log('From the list!', search);
-    this.setState({ selectedSeachItem: search });
-  };
-
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
       (position) =>
@@ -142,86 +136,68 @@ class App extends React.Component {
       <div className="App">
         <div className="ui container">
           <h1>UK force data API</h1>
+          <h2>Select a force:</h2>
+          <Dropdown
+            forces={this.state.forces}
+            onSelectChange={this.onSelectChange}
+          />
+          {this.state.selectedForce && (
+            <h3>Selected force: {this.state.selectedForce}</h3>
+          )}
+          {this.state.selectedForceName && (
+            <h3>Selected force name: {this.state.selectedForceName}</h3>
+          )}
+          {this.state.selectedForceUrl && (
+            <h3>
+              Selected force URL:{' '}
+              <a href={this.state.selectedForceUrl}>
+                {this.state.selectedForceUrl}
+              </a>
+            </h3>
+          )}
+          <div
+            dangerouslySetInnerHTML={{
+              __html: this.state.selectedForceDescription
+            }}
+          ></div>
+          <hr />
+          <h2>
+            Your current coordinates: {this.state.latitude},{' '}
+            {this.state.longitude}
+          </h2>
+          <MapContainer lat={this.state.latitude} long={this.state.longitude} />
 
-          <div className="ui segment">
-            <h2>Select a force:</h2>
-            <Dropdown
-              forces={this.state.forces}
-              onSelectChange={this.onSelectChange}
-            />
-            {this.state.selectedForce && (
-              <h3>Selected force: {this.state.selectedForce}</h3>
-            )}
-            {this.state.selectedForceName && (
-              <h3>Selected force name: {this.state.selectedForceName}</h3>
-            )}
-            {this.state.selectedForceUrl && (
-              <h3>
-                Selected force URL:{' '}
-                <a href={this.state.selectedForceUrl}>
-                  {this.state.selectedForceUrl}
-                </a>
-              </h3>
-            )}
-            <div
-              dangerouslySetInnerHTML={{
-                __html: this.state.selectedForceDescription
-              }}
-            ></div>
-          </div>
+          <hr />
 
-          <div className="ui segment">
-            <h2>
-              Your current coordinates: {this.state.latitude},{' '}
-              {this.state.longitude}
-            </h2>
-            <MapContainer
-              lat={this.state.latitude}
-              long={this.state.longitude}
-            />
-          </div>
+          {!this.state.searchDataLoaded && (
+            <button onClick={this.getSearches}>
+              Get stop and searches for these co-ordinates
+            </button>
+          )}
 
-          <div className="ui segment">
-            <div className="ui grid">
-              <div className="ui row">
-                <div className="five wide column">
-                  {!this.state.searchDataLoaded && (
-                    <button onClick={this.getSearches}>
-                      Get stop and searches for these co-ordinates
-                    </button>
-                  )}
-                </div>
-              </div>
+          <br />
 
-              {this.state.selectedSearchData && (
-                <React.Fragment>
-                  <h2>Filter results</h2>
-                  <FormSelect
-                    name={'genderFilterTerm'}
-                    items={this.state.genderOptions}
-                    onFilterSelectChange={this.onFilterSelectChange}
-                  />
-                  <FormSelect
-                    name={'offenceFilterTerm'}
-                    items={this.state.offenceOptions}
-                    onFilterSelectChange={this.onFilterSelectChange}
-                  />
-                </React.Fragment>
-              )}
+          {this.state.selectedSearchData && (
+            <React.Fragment>
+              <h2>Filter results</h2>
+              <FormSelect
+                name={'genderFilterTerm'}
+                items={this.state.genderOptions}
+                onFilterSelectChange={this.onFilterSelectChange}
+              />
+              <FormSelect
+                name={'offenceFilterTerm'}
+                items={this.state.offenceOptions}
+                onFilterSelectChange={this.onFilterSelectChange}
+              />
+            </React.Fragment>
+          )}
 
-              <div className="ui row">
-                <div className="six wide column" style={{ listStyle: 'none' }}>
-                  {this.state.searchDataLoaded && (
-                    <Searches
-                      searches={this.state.filteredSearchData}
-                      onSearchItemSelect={this.onSearchItemSelect}
-                    />
-                  )}
-                </div>
-                <div className="ten wide column">TODO: item detail here</div>
-              </div>
-            </div>
-          </div>
+          {this.state.searchDataLoaded && (
+            <Searches searches={this.state.filteredSearchData} />
+          )}
+
+          <hr />
         </div>
       </div>
     );

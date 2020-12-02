@@ -210,15 +210,17 @@ class App extends React.Component {
               )}
 
               <div className="ui row">
-                <div className="six wide column" style={{ listStyle: 'none' }}>
+                <div
+                  className="eight wide column"
+                  style={{ listStyle: 'none' }}
+                >
                   {this.state.searchDataLoaded && (
                     <Searches
                       searches={this.state.filteredSearchData}
                       onSearchItemSelect={this.onSearchItemSelect}
                     />
                   )}
-                </div>
-                <div className="ten wide column">TODO: item detail here</div>
+                </div>teneight wide column">TODO: item detail here</div>
               </div>
             </div>
           </div>

@@ -24,8 +24,7 @@ class App extends React.Component {
       offenceFilterTerm: ''
     },
     filteredSearchData: [],
-    searchDataLoaded: false,
-    selectedSeachItem: null
+    searchDataLoaded: false
   };
 
   onSelectChange = (event) => {
@@ -111,9 +110,9 @@ class App extends React.Component {
       });
   };
 
-  onSearchItemSelect = (search) => {
-    console.log('From the list!', search);
-    this.setState({ selectedSeachItem: search });
+  onSearchItemSelect = (video) => {
+    console.log('From the app!', search);
+    this.setState({ selectedVideo: search });
   };
 
   componentDidMount() {
@@ -210,15 +209,14 @@ class App extends React.Component {
               )}
 
               <div className="ui row">
-                <div className="six wide column" style={{ listStyle: 'none' }}>
+                <div className="five wide column" style={{ listStyle: 'none' }}>
                   {this.state.searchDataLoaded && (
-                    <Searches
-                      searches={this.state.filteredSearchData}
-                      onSearchItemSelect={this.onSearchItemSelect}
-                    />
+                    <Searches searches={this.state.filteredSearchData} />
                   )}
                 </div>
-                <div className="ten wide column">TODO: item detail here</div>
+                <div className="eleven wide column">
+                  Selected item will go here
+                </div>
               </div>
             </div>
           </div>

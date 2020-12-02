@@ -24,8 +24,7 @@ class App extends React.Component {
       offenceFilterTerm: ''
     },
     filteredSearchData: [],
-    searchDataLoaded: false,
-    selectedSeachItem: null
+    searchDataLoaded: false
   };
 
   onSelectChange = (event) => {
@@ -111,11 +110,6 @@ class App extends React.Component {
       });
   };
 
-  onSearchItemSelect = (search) => {
-    console.log('From the list!', search);
-    this.setState({ selectedSeachItem: search });
-  };
-
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
       (position) =>
@@ -169,30 +163,26 @@ class App extends React.Component {
               }}
             ></div>
           </div>
+          <hr />
+          <h2>
+            Your current coordinates: {this.state.latitude},{' '}
+            {this.state.longitude}
+          </h2>
+          <MapContainer lat={this.state.latitude} long={this.state.longitude} />
 
-          <div className="ui segment">
-            <h2>
-              Your current coordinates: {this.state.latitude},{' '}
-              {this.state.longitude}
-            </h2>
-            <MapContainer
-              lat={this.state.latitude}
-              long={this.state.longitude}
-            />
-          </div>
+          <hr />
 
-          <div className="ui segment">
-            <div className="ui grid">
-              <div className="ui row">
-                <div className="five wide column">
-                  {!this.state.searchDataLoaded && (
-                    <button onClick={this.getSearches}>
-                      Get stop and searches for these co-ordinates
-                    </button>
-                  )}
-                </div>
+          <div className="ui grid">
+            <div className="ui row">
+              <div className="five wide column">
+                {!this.state.searchDataLoaded && (
+                  <button onClick={this.getSearches}>
+                    Get stop and searches for these co-ordinates
+                  </button>
+                )}
               </div>
-
+            </div>
+            <div className="ui segment">
               {this.state.selectedSearchData && (
                 <React.Fragment>
                   <h2>Filter results</h2>
@@ -208,20 +198,20 @@ class App extends React.Component {
                   />
                 </React.Fragment>
               )}
-
-              <div className="ui row">
-                <div className="six wide column" style={{ listStyle: 'none' }}>
-                  {this.state.searchDataLoaded && (
-                    <Searches
-                      searches={this.state.filteredSearchData}
-                      onSearchItemSelect={this.onSearchItemSelect}
-                    />
-                  )}
-                </div>
-                <div className="ten wide column">TODO: item detail here</div>
+            </div>
+            <div className="ui row">
+              <div className="five wide column">
+                {this.state.searchDataLoaded && (
+                  <Searches searches={this.state.filteredSearchData} />
+                )}
+              </div>
+              <div className="eleven wide column">
+                Selected item will go here
               </div>
             </div>
           </div>
+
+          <hr />
         </div>
       </div>
     );
