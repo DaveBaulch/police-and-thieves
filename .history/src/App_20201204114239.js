@@ -231,9 +231,7 @@ class App extends React.Component {
                   )}
                 </div>
                 <div className="ten wide column">
-                  <SearchesItemDetail
-                    selectedSearchItem={this.state.selectedSearchItem}
-                  />
+                  <SearchesItemDetail searchItem={this.state.selectedSearchItem} />
                 </div>
               </div>
             </div>

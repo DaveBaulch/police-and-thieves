@@ -26,7 +26,7 @@ class App extends React.Component {
     },
     filteredSearchData: [],
     searchDataLoaded: false,
-    selectedSearchItem: null
+    selectedSeachItem: null
   };
 
   onSelectChange = (event) => {
@@ -114,7 +114,7 @@ class App extends React.Component {
 
   onSearchItemSelect = (search) => {
     console.log('From the list!', search);
-    this.setState({ selectedSearchItem: search });
+    this.setState({ selectedSeachItem: search });
   };
 
   componentDidMount() {
@@ -231,9 +231,7 @@ class App extends React.Component {
                   )}
                 </div>
                 <div className="ten wide column">
-                  <SearchesItemDetail
-                    selectedSearchItem={this.state.selectedSearchItem}
-                  />
+                    
                 </div>
               </div>
             </div>

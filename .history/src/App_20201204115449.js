@@ -26,7 +26,7 @@ class App extends React.Component {
     },
     filteredSearchData: [],
     searchDataLoaded: false,
-    selectedSearchItem: null
+    selectedSearchItem: {}
   };
 
   onSelectChange = (event) => {
@@ -232,7 +232,7 @@ class App extends React.Component {
                 </div>
                 <div className="ten wide column">
                   <SearchesItemDetail
-                    selectedSearchItem={this.state.selectedSearchItem}
+                    {this.state.selectedSearchItem}
                   />
                 </div>
               </div>

@@ -26,7 +26,7 @@ class App extends React.Component {
     },
     filteredSearchData: [],
     searchDataLoaded: false,
-    selectedSearchItem: null
+    selectedSearchItem: {}
   };
 
   onSelectChange = (event) => {

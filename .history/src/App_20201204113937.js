@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import Dropdown from './components/Dropdown';
 import Searches from './components/Searches';
-import SearchesItemDetail from './components/SearchesItemDetail';
+import Searches from './components/Searches';
 import MapContainer from './components/MapContainer';
 import FormSelect from './components/FormSelect';
 
@@ -26,7 +26,7 @@ class App extends React.Component {
     },
     filteredSearchData: [],
     searchDataLoaded: false,
-    selectedSearchItem: null
+    selectedSeachItem: null
   };
 
   onSelectChange = (event) => {
@@ -114,7 +114,7 @@ class App extends React.Component {
 
   onSearchItemSelect = (search) => {
     console.log('From the list!', search);
-    this.setState({ selectedSearchItem: search });
+    this.setState({ selectedSeachItem: search });
   };
 
   componentDidMount() {
@@ -230,11 +230,7 @@ class App extends React.Component {
                     />
                   )}
                 </div>
-                <div className="ten wide column">
-                  <SearchesItemDetail
-                    selectedSearchItem={this.state.selectedSearchItem}
-                  />
-                </div>
+                <div className="ten wide column">TODO: item detail here</div>
               </div>
             </div>
           </div>

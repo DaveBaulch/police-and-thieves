@@ -232,7 +232,7 @@ class App extends React.Component {
                 </div>
                 <div className="ten wide column">
                   <SearchesItemDetail
-                    selectedSearchItem={this.state.selectedSearchItem}
+                    Objects are not valid as a React child
                   />
                 </div>
               </div>
