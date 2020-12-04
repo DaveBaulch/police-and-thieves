@@ -177,12 +177,10 @@ class App extends React.Component {
           </div>
 
           <div className="ui segment">
-            {this.state.latitude && (
-              <h2>
-                Your current coordinates: {this.state.latitude},{' '}
-                {this.state.longitude}
-              </h2>
-            )}
+            <h2>
+              Your current coordinates: {this.state.latitude},{' '}
+              {this.state.longitude}
+            </h2>
             <MapContainer
               errorMessage={this.state.errorMessage}
               lat={this.state.latitude}

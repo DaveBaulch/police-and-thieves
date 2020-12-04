@@ -1,6 +1,7 @@
 import React from 'react';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import Spinner from './Spinner';
+
 class MapContainer extends React.Component {
   constructor(props) {
     super(props);

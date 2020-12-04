@@ -1,10 +1,13 @@
 import React from 'react';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import Spinner from './Spinner';
+
+// const MapContainer = ({ lat, long }) => {
 class MapContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      errorMessage: '',
       mapStyles: {
         height: '100vh',
         width: '100%'

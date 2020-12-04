@@ -182,7 +182,7 @@ class App extends React.Component {
                 Your current coordinates: {this.state.latitude},{' '}
                 {this.state.longitude}
               </h2>
-            )}
+            }
             <MapContainer
               errorMessage={this.state.errorMessage}
               lat={this.state.latitude}
