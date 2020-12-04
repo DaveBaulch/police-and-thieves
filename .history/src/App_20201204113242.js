@@ -150,6 +150,7 @@ class App extends React.Component {
                   <h2>Select a force:</h2>
 
                   <Dropdown
+                    name={'Select' }
                     forces={this.state.forces}
                     onSelectChange={this.onSelectChange}
                   />

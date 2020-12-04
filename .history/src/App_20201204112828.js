@@ -149,9 +149,15 @@ class App extends React.Component {
                 <div className="five wide column">
                   <h2>Select a force:</h2>
 
-                  <Dropdown
-                    forces={this.state.forces}
-                    onSelectChange={this.onSelectChange}
+                  // <Dropdown
+                  //   forces={this.state.forces}
+                  //   onSelectChange={this.onSelectChange}
+                  // />
+                    
+                  <FormSelect
+                    name={'genderFilterTerm'}
+                    items={this.state.forces}
+                    onFilterSelectChange={this.onFilterSelectChange}
                   />
 
                   {this.state.selectedForce && (

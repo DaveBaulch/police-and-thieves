@@ -1,6 +1,7 @@
 import React from 'react';
 
-class Dropdown extends React.Component {
+// const Dropdown = ({ forces, onSelectChange }) => {
+class FormSelect extends React.Component {
   constructor(props) {
     super(props);
     this.state = { term: '' };

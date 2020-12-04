@@ -1,6 +1,7 @@
 import React from 'react';
 
-class Dropdown extends React.Component {
+// const Dropdown = ({ forces, onSelectChange }) => {
+class FormSelect extends React.Component {
   constructor(props) {
     super(props);
     this.state = { term: '' };
@@ -15,13 +16,8 @@ class Dropdown extends React.Component {
     return (
       <div>
         <label htmlFor="forces">Choose a force:</label>
-        <select
-          name="forces"
-          id="forces"
-          value={this.state.term}
-          onChange={this.onSelectChange}
-        >
-          {this.props.forces.map((item) => {
+        <select name="forces" id="forces" onChange={this.onSelectChange}>
+          {forces.map((item) => {
             return (
               <option value={item.id} key={item.id}>
                 {item.name}

@@ -148,12 +148,11 @@ class App extends React.Component {
               <div className="ui row">
                 <div className="five wide column">
                   <h2>Select a force:</h2>
-
                   <Dropdown
                     forces={this.state.forces}
                     onSelectChange={this.onSelectChange}
                   />
-
+                  
                   {this.state.selectedForce && (
                     <h3>Selected force: {this.state.selectedForce}</h3>
                   )}
