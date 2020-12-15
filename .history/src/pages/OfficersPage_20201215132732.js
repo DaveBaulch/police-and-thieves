@@ -9,7 +9,7 @@ class OfficerPage extends React.Component {
 
   renderedOfficers() {
     if (!this.state.selectedForceOfficers.length) {
-      return <div>No officer details available for this force.</div>;
+      return <div>No officer details available for this force</div>;
     }
 
     console.log('state' + this.state.selectedForceOfficers);

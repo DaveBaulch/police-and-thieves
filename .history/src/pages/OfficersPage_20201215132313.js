@@ -1,6 +1,5 @@
 import React from 'react';
 import policeapi from '../apis/policeapi';
-import { Link } from 'react-router-dom';
 
 class OfficerPage extends React.Component {
   state = {
@@ -8,10 +7,6 @@ class OfficerPage extends React.Component {
   };
 
   renderedOfficers() {
-    if (!this.state.selectedForceOfficers.length) {
-      return <div>No officer details available for this force.</div>;
-    }
-
     console.log('state' + this.state.selectedForceOfficers);
     return this.state.selectedForceOfficers.map((officer) => {
       return (
@@ -65,8 +60,6 @@ class OfficerPage extends React.Component {
         <Link to={'/'} className="ui button primary">
           Back to homepage
         </Link>
-        <br />
-        <br />
         {this.renderedOfficers()}
       </div>
     );
