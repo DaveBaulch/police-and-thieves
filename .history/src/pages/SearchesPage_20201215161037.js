@@ -2,18 +2,18 @@ import React from 'react';
 import policeapi from '../apis/policeapi';
 import { Link } from 'react-router-dom';
 
-class OfficerPage extends React.Component {
+class SearchesPage extends React.Component {
   state = {
-    selectedForceOfficers: []
+    selectedForceSearches: []
   };
 
   renderedOfficers() {
-    if (!this.state.selectedForceOfficers.length) {
-      return <div>No officer details available for this force.</div>;
+    if (!this.state.selectedForceSearches.length) {
+      return <div>No search details available for this force.</div>;
     }
 
-    console.log('state' + this.state.selectedForceOfficers);
-    return this.state.selectedForceOfficers.map((officer) => {
+    console.log('state' + this.state.selectedForceSearches);
+    return this.state.selectedForceSearches.map((officer) => {
       return (
         <div key={officer.name}>
           <h2>{officer.name}</h2>
@@ -58,7 +58,7 @@ class OfficerPage extends React.Component {
 
   componentDidMount() {
     policeapi
-      .get(`/forces/${this.props.match.params.id}/people`)
+      .get(`/stops-force?force=${this.props.match.params.id}`)
       .then((response) => {
         console.log(response.data);
         this.setState({ selectedForceOfficers: response.data });
@@ -71,16 +71,16 @@ class OfficerPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Officer Details - {this.props.location.state.selectedForceName}</h1>
+        <h1>Office Page</h1>
         <Link to={'/'} className="ui button primary">
           Back to homepage
         </Link>
         <br />
         <br />
-        {this.renderedOfficers()}
+        {this.renderedSearches()}
       </div>
     );
   }
 }
 
-export default OfficerPage;
+export default SearchesPage;

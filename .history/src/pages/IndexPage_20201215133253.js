@@ -54,7 +54,7 @@ class IndexPage extends React.Component {
           <div className="ui segment">
             <div className="ui grid">
               <div className="ui row">
-                <div className="twelve wide column">
+                <div className="ten wide column">
                   <h2>Select a force:</h2>
 
                   <Dropdown
@@ -86,29 +86,10 @@ class IndexPage extends React.Component {
 
                   {this.state.selectedForce && (
                     <Link
-                      to={{
-                        pathname: `/officers/${this.state.selectedForce}`,
-                        state: {
-                          selectedForceName: this.state.selectedForceName
-                        }
-                      }}
+                      to={`/officers/${this.state.selectedForce}`}
                       className="ui button primary"
                     >
                       View officers for this force
-                    </Link>
-                  )}
-
-                  {this.state.selectedForce && (
-                    <Link
-                      to={{
-                        pathname: `/searches/${this.state.selectedForce}`,
-                        state: {
-                          selectedForceName: this.state.selectedForceName
-                        }
-                      }}
-                      className="ui button primary"
-                    >
-                      View Searches for this force
                     </Link>
                   )}
                 </div>

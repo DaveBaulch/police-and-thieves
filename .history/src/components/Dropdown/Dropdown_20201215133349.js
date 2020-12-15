@@ -14,7 +14,7 @@ class Dropdown extends React.Component {
   render() {
     return (
       <div>
-        <label htmlFor="forces">Choose a force:</label>
+        <label htmlFor="forces">Choose a force</label>
         <br />
         <select
           name="forces"

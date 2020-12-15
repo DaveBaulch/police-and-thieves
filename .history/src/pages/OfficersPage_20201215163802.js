@@ -12,6 +12,8 @@ class OfficerPage extends React.Component {
       return <div>No officer details available for this force.</div>;
     }
 
+    console.log(this.props.location.state.selectedForceNam);
+
     console.log('state' + this.state.selectedForceOfficers);
     return this.state.selectedForceOfficers.map((officer) => {
       return (
@@ -71,7 +73,7 @@ class OfficerPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Officer Details - {this.props.location.state.selectedForceName}</h1>
+        <h1>Officer Details</h1>
         <Link to={'/'} className="ui button primary">
           Back to homepage
         </Link>

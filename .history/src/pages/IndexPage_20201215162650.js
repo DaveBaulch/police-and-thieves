@@ -86,13 +86,9 @@ class IndexPage extends React.Component {
 
                   {this.state.selectedForce && (
                     <Link
-                      to={{
-                        pathname: `/officers/${this.state.selectedForce}`,
-                        state: {
-                          selectedForceName: this.state.selectedForceName
-                        }
-                      }}
+                      to={{`/officers/${this.state.selectedForce}`}
                       className="ui button primary"
+                      
                     >
                       View officers for this force
                     </Link>
@@ -100,13 +96,9 @@ class IndexPage extends React.Component {
 
                   {this.state.selectedForce && (
                     <Link
-                      to={{
-                        pathname: `/searches/${this.state.selectedForce}`,
-                        state: {
-                          selectedForceName: this.state.selectedForceName
-                        }
-                      }}
+                      to={`/searches/${this.state.selectedForce}`}
                       className="ui button primary"
+                      forceName={this.state.selectedForceName}
                     >
                       View Searches for this force
                     </Link>

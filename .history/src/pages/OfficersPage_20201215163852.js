@@ -12,6 +12,8 @@ class OfficerPage extends React.Component {
       return <div>No officer details available for this force.</div>;
     }
 
+    console.log(this.props.location.state.selectedForceName);
+
     console.log('state' + this.state.selectedForceOfficers);
     return this.state.selectedForceOfficers.map((officer) => {
       return (

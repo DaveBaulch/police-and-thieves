@@ -101,7 +101,7 @@ class IndexPage extends React.Component {
                   {this.state.selectedForce && (
                     <Link
                       to={{
-                        pathname: `/searches/${this.state.selectedForce}`,
+                        pathname: `/officers/${this.state.selectedForce}`,
                         state: {
                           selectedForceName: this.state.selectedForceName
                         }

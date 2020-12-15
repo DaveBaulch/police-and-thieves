@@ -5,7 +5,7 @@ import Header from './components/Header';
 import IndexPage from './pages/IndexPage';
 import LocationPage from './pages/LocationPage';
 import OfficersPage from './pages/OfficersPage';
-import SearchesPage from './pages/SearchesPage';
+import OfficersPage from './pages/OfficersPage';
 import createBrowserHistory from './history';
 
 class App extends React.Component {

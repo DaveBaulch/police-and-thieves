@@ -7,6 +7,8 @@ class OfficerPage extends React.Component {
     selectedForceOfficers: []
   };
 
+  console.log("about")
+
   renderedOfficers() {
     if (!this.state.selectedForceOfficers.length) {
       return <div>No officer details available for this force.</div>;
@@ -38,7 +40,7 @@ class OfficerPage extends React.Component {
 
           {!(Object.keys(officer.contact_details).length === 0) && (
             <React.Fragment>
-              <h3>Contact details</h3>
+              <h3>Contact details - {this.props.forceName}</h3>
               <strong>{Object.keys(officer.contact_details)} : </strong>
               <a href={officer.contact_details}>
                 {Object.values(officer.contact_details)}
@@ -71,7 +73,7 @@ class OfficerPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Officer Details - {this.props.location.state.selectedForceName}</h1>
+        <h1>Officer Details</h1>
         <Link to={'/'} className="ui button primary">
           Back to homepage
         </Link>

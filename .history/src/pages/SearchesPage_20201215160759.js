@@ -2,7 +2,7 @@ import React from 'react';
 import policeapi from '../apis/policeapi';
 import { Link } from 'react-router-dom';
 
-class OfficerPage extends React.Component {
+class SearchesPage extends React.Component {
   state = {
     selectedForceOfficers: []
   };
@@ -71,7 +71,7 @@ class OfficerPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Officer Details - {this.props.location.state.selectedForceName}</h1>
+        <h1>Office Page</h1>
         <Link to={'/'} className="ui button primary">
           Back to homepage
         </Link>
