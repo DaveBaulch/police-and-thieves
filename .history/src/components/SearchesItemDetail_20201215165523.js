@@ -2,7 +2,7 @@ import React from 'react';
 
 const SearchesItemDetail = ({ selectedSearchItem }) => {
   if (!selectedSearchItem) {
-    return <div></div>;
+    return <div>Please get searches and select an item from the left</div>;
   }
 
   return (

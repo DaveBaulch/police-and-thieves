@@ -49,7 +49,7 @@ class SearchesPage extends React.Component {
         </Link>
         <br />
         <br />
-        <ul style={{ padding: '0' }}>{this.renderedSearches()}</ul>
+        <ul style={{ padding: 'none' }}>{this.renderedSearches()}</ul>
       </div>
     );
   }
