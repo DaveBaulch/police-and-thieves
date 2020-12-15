@@ -3,7 +3,7 @@ import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import IndexPage from './pages/IndexPage';
-import LocationPage from './pages/LocationPage';
+import LocationPage from './pages/Page1';
 import createBrowserHistory from './history';
 
 class App extends React.Component {

@@ -2,8 +2,8 @@ import './App.css';
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
-import IndexPage from './pages/IndexPage';
-import LocationPage from './pages/LocationPage';
+import Index from './pages/Index';
+import LocationPage from './pages/Page1';
 import createBrowserHistory from './history';
 
 class App extends React.Component {
@@ -13,7 +13,7 @@ class App extends React.Component {
         <Router history={createBrowserHistory}>
           <Header />
           <Switch>
-            <Route path="/" exact component={IndexPage} />
+            <Route path="/" exact component={Index} />
             <Route path="/location" exact component={LocationPage} />
           </Switch>
         </Router>

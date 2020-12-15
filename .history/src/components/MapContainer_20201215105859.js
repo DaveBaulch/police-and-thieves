@@ -6,8 +6,8 @@ class MapContainer extends React.Component {
     super(props);
     this.state = {
       mapStyles: {
-        height: '400px',
-        width: '100%'
+        height: '100vh',
+        width: '300px'
       }
     };
   }
