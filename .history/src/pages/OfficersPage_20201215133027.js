@@ -17,23 +17,17 @@ class OfficerPage extends React.Component {
       return (
         <div key={officer.name}>
           <h2>{officer.name}</h2>
-
-          {officer.rank && (
-            <React.Fragment>
-              <h3>Rank</h3>
-              {officer.rank}
-            </React.Fragment>
-          )}
+          <h3>Rank</h3>
+          {officer.rank}
 
           {officer.bio && (
-            <React.Fragment>
-              <h3>Bio</h3>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: officer.bio
-                }}
-              ></div>
-            </React.Fragment>
+            <React.Fragment></React.Fragment>
+            <h3>Bio</h3>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: officer.bio
+              }}
+            ></div>
           )}
 
           {!(Object.keys(officer.contact_details).length === 0) && (

@@ -17,13 +17,8 @@ class OfficerPage extends React.Component {
       return (
         <div key={officer.name}>
           <h2>{officer.name}</h2>
-
-          {officer.rank && (
-            <React.Fragment>
-              <h3>Rank</h3>
-              {officer.rank}
-            </React.Fragment>
-          )}
+          <h3>Rank</h3>
+          {officer.rank}
 
           {officer.bio && (
             <React.Fragment>

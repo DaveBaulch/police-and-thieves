@@ -17,25 +17,14 @@ class OfficerPage extends React.Component {
       return (
         <div key={officer.name}>
           <h2>{officer.name}</h2>
-
-          {officer.rank && (
-            <React.Fragment>
-              <h3>Rank</h3>
-              {officer.rank}
-            </React.Fragment>
-          )}
-
-          {officer.bio && (
-            <React.Fragment>
-              <h3>Bio</h3>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: officer.bio
-                }}
-              ></div>
-            </React.Fragment>
-          )}
-
+          <h3>Rank</h3>
+          {officer.rank}
+          {this.state.officer.bio}} && (<h3>Bio</h3>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: officer.bio
+            }}
+          ></div>
           {!(Object.keys(officer.contact_details).length === 0) && (
             <React.Fragment>
               <h3>Contact details</h3>
@@ -45,7 +34,6 @@ class OfficerPage extends React.Component {
               </a>
             </React.Fragment>
           )}
-
           <br />
           <br />
           <hr />
