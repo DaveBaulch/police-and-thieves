@@ -7,9 +7,7 @@ class Dropdown extends React.Component {
   }
 
   onSelectChange = (event) => {
-    // if (event.target.value === '') {
-    //   return;
-    // }
+    if event.target.value === ""
     this.setState({ term: event.target.value });
     this.props.onSelectChange(event);
   };

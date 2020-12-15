@@ -18,10 +18,10 @@ class IndexPage extends React.Component {
       event.target.options[event.target.selectedIndex].value;
     console.log(selectedForce);
     if (selectedForce === '') {
-      this.setState({ selectedForce: null });
+      this.setState({ forces: [] });
       this.setState({ selectedForceName: '' });
       this.setState({ selectedForceUrl: '' });
-      this.setState({ selectedForceDescription: '' });
+      this.setState({ selectedForceName: '' });
       return;
     }
 

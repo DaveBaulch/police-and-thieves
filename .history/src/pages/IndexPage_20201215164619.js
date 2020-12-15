@@ -9,7 +9,8 @@ class IndexPage extends React.Component {
     selectedForce: null,
     selectedForceName: '',
     selectedForceUrl: '',
-    selectedForceDescription: ''
+    selectedForceDescription: '',
+    selectedForceOfficers: []
   };
 
   onSelectChange = (event) => {
@@ -17,15 +18,10 @@ class IndexPage extends React.Component {
     const selectedForce =
       event.target.options[event.target.selectedIndex].value;
     console.log(selectedForce);
-    if (selectedForce === '') {
-      this.setState({ selectedForce: null });
-      this.setState({ selectedForceName: '' });
-      this.setState({ selectedForceUrl: '' });
-      this.setState({ selectedForceDescription: '' });
-      return;
-    }
-
-    this.setState({ selectedForce: selectedForce });
+    if (selectedForce === "")
+    
+      
+      this.setState({ selectedForce: selectedForce });
 
     policeapi
       .get(`/forces/${selectedForce}`)

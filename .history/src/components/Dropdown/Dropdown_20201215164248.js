@@ -7,9 +7,6 @@ class Dropdown extends React.Component {
   }
 
   onSelectChange = (event) => {
-    // if (event.target.value === '') {
-    //   return;
-    // }
     this.setState({ term: event.target.value });
     this.props.onSelectChange(event);
   };
@@ -25,7 +22,7 @@ class Dropdown extends React.Component {
           value={this.state.term}
           onChange={this.onSelectChange}
         >
-          <option value="">Please select...</option>
+          
           {this.props.forces.map((item) => {
             return (
               <option value={item.id} key={item.id}>
