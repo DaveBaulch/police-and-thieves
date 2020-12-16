@@ -1,0 +1,9 @@
+.search-item {
+  display: flex !important;
+  align-items: center !important;
+  cursor: pointer;
+}
+
+.search-item {
+  cursor: default;
+}
