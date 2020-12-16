@@ -6,7 +6,6 @@ import IndexPage from './pages/IndexPage';
 import LocationPage from './pages/LocationPage';
 import OfficersPage from './pages/OfficersPage';
 import SearchesPage from './pages/SearchesPage';
-import NotFoundPage from './pages/NotFoundPage';
 import createBrowserHistory from './history';
 
 class App extends React.Component {
@@ -20,7 +19,7 @@ class App extends React.Component {
             <Route path="/location" exact component={LocationPage} />
             <Route path="/officers/:id" exact component={OfficersPage} />
             <Route path="/searches/:id" exact component={SearchesPage} />
-            <Route component={NotFoundPage} />
+            <Route component={404Page} />
           </Switch>
         </Router>
       </div>

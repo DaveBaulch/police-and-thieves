@@ -42,7 +42,7 @@ class SearchesPage extends React.Component {
   }
 
   render() {
-    if (this.state.selectedForceSearches.length) {
+    if (selectedForceSearches) {
       return (
         <div>
           <h1>
@@ -58,7 +58,7 @@ class SearchesPage extends React.Component {
       );
     }
 
-    return <Spinner message="Loading data..." />;
+    return <Spinner message="Loading..." />;
   }
 }
 

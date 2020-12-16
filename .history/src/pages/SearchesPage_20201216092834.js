@@ -58,7 +58,7 @@ class SearchesPage extends React.Component {
       );
     }
 
-    return <Spinner message="Loading data..." />;
+    return <Spinner message="Loading..." />;
   }
 }
 

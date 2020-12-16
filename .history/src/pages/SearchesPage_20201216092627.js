@@ -42,23 +42,10 @@ class SearchesPage extends React.Component {
   }
 
   render() {
-    if (this.state.selectedForceSearches.length) {
-      return (
-        <div>
-          <h1>
-            Force Searches - {this.props.location.state.selectedForceName}
-          </h1>
-          <Link to={'/'} className="ui button primary">
-            Back to homepage
-          </Link>
-          <br />
-          <br />
-          <ul style={{ padding: '0' }}>{this.renderedSearches()}</ul>
-        </div>
-      );
+    if () {
+    
     }
 
-    return <Spinner message="Loading data..." />;
   }
 }
 
