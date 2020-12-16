@@ -190,6 +190,10 @@ class LocationPage extends React.Component {
                   )}
                 </div>
                 <div className="ten wide column">
+                  <SearchesItemDetail
+                    selectedSearchItem={this.state.selectedSearchItem}
+                  />
+                  <button onClick={this.openModal}>Open Modal</button>
                   <Modal
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}

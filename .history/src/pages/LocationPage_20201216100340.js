@@ -22,35 +22,24 @@ class LocationPage extends React.Component {
     filteredSearchData: [],
     searchDataLoaded: false,
     selectedSearchItem: null,
-    modalIsOpen: false,
-    customStyles: {
-      content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)'
-      }
-    }
+    modalIsOpen: false
   };
 
-  // const subtitle;
+  const subtitle;
+  function openModal() {
+  //setIsOpen(true)
+  this.setState({ setIsOpen: true })
+}
 
-  openModal = () => {
-    //setIsOpen(true)
-    this.setState({ modalIsOpen: true });
-  };
-
-  afterOpenModal = () => {
+  function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    // subtitle.style.color = '#f00';
-  };
+    subtitle.style.color = '#f00';
+  }
 
-  closeModal = () => {
+  function closeModal(){
     //setIsOpen(false);
-    this.setState({ modalIsOpen: false });
-  };
+    this.setState({ setIsOpen: false })
+  }  
 
   onFilterSelectChange = (event) => {
     const { filterTerms } = this.state;
@@ -115,7 +104,6 @@ class LocationPage extends React.Component {
   onSearchItemSelect = (search) => {
     console.log('From the list!', search);
     this.setState({ selectedSearchItem: search });
-    this.openModal();
   };
 
   componentDidMount() {
@@ -190,18 +178,27 @@ class LocationPage extends React.Component {
                   )}
                 </div>
                 <div className="ten wide column">
+                  <SearchesItemDetail
+                    selectedSearchItem={this.state.selectedSearchItem}
+                  />
+                  <button onClick={openModal}>Open Modal</button>
                   <Modal
-                    isOpen={this.state.modalIsOpen}
-                    onAfterOpen={this.afterOpenModal}
-                    onRequestClose={this.closeModal}
-                    style={this.state.customStyles}
+                    isOpen={modalIsOpen}
+                    onAfterOpen={afterOpenModal}
+                    onRequestClose={closeModal}
+                    style={customStyles}
                     contentLabel="Example Modal"
                   >
-                    <button onClick={this.closeModal}>close</button>
-                    <h2>Search details</h2>
-                    <SearchesItemDetail
-                      selectedSearchItem={this.state.selectedSearchItem}
-                    />
+                    <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
+                    <button onClick={closeModal}>close</button>
+                    <div>I am a modal</div>
+                    <form>
+                      <input />
+                      <button>tab navigation</button>
+                      <button>stays</button>
+                      <button>inside</button>
+                      <button>the modal</button>
+                    </form>
                   </Modal>
                 </div>
               </div>

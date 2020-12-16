@@ -115,7 +115,6 @@ class LocationPage extends React.Component {
   onSearchItemSelect = (search) => {
     console.log('From the list!', search);
     this.setState({ selectedSearchItem: search });
-    this.openModal();
   };
 
   componentDidMount() {
@@ -190,6 +189,10 @@ class LocationPage extends React.Component {
                   )}
                 </div>
                 <div className="ten wide column">
+                  <SearchesItemDetail
+                    selectedSearchItem={this.state.selectedSearchItem}
+                  />
+                  <button onClick={this.openModal}>Open Modal</button>
                   <Modal
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
@@ -198,10 +201,14 @@ class LocationPage extends React.Component {
                     contentLabel="Example Modal"
                   >
                     <button onClick={this.closeModal}>close</button>
-                    <h2>Search details</h2>
-                    <SearchesItemDetail
-                      selectedSearchItem={this.state.selectedSearchItem}
-                    />
+                    <div>I am a modal</div>
+                    <form>
+                      <input />
+                      <button>tab navigation</button>
+                      <button>stays</button>
+                      <button>inside</button>
+                      <button>the modal</button>
+                    </form>
                   </Modal>
                 </div>
               </div>
