@@ -36,7 +36,7 @@ class SearchesPage extends React.Component {
       .then((response) => {
         // console.log(response.data);
         this.setState({ selectedForceSearches: response.data });
-        setTimeout(() => this.setState({ dataLoaded: true }), 500);
+        setTimeout(() => this.setState({ dataLoaded: true }), 1000);
       })
       .catch(function (error) {
         console.log(error);

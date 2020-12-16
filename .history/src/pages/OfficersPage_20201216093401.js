@@ -64,7 +64,7 @@ class OfficerPage extends React.Component {
       .then((response) => {
         console.log(response.data);
         this.setState({ selectedForceOfficers: response.data });
-        setTimeout(() => this.setState({ dataLoaded: true }), 500);
+        this.setState({ dataLoaded: true });
       })
       .catch(function (error) {
         console.log(error);
