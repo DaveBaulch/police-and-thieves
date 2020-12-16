@@ -187,7 +187,7 @@ class LocationPage extends React.Component {
                       onClick={this.getSearches}
                       className="ui button primary"
                     >
-                      Get stop and search data for these co-ordinates for the
+                      Get stop and search data for these co-ordinatesfor the
                       last month
                     </button>
                   </div>

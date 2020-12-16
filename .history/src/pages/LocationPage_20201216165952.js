@@ -182,13 +182,12 @@ class LocationPage extends React.Component {
             <div className="ui grid">
               {!this.state.searchDataLoaded && (
                 <div className="ui row">
-                  <div className="eight wide column">
+                  <div className="five wide column">
                     <button
                       onClick={this.getSearches}
                       className="ui button primary"
                     >
-                      Get stop and search data for these co-ordinates for the
-                      last month
+                      Get stop and searches for these co-ordinatesfor the l
                     </button>
                   </div>
                 </div>
