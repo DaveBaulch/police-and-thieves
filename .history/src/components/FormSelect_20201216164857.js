@@ -13,9 +13,7 @@ class FormSelect extends React.Component {
   render() {
     return (
       <>
-        <label htmlFor={this.props.name} style={{ marginRight: 10 }}>
-          {this.props.label}
-        </label>
+        <label htmlFor={this.props.name}>{this.props.label}</label>
         <select
           value={this.state.term}
           name={this.props.name}

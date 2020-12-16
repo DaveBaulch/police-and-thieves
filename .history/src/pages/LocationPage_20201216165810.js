@@ -181,17 +181,18 @@ class LocationPage extends React.Component {
           <div className="ui segment">
             <div className="ui grid">
               {!this.state.searchDataLoaded && (
-                <div className="ui row">
-                  <div className="five wide column">
+              <div className="ui row">
+                <div className="five wide column">
+                  
                     <button
                       onClick={this.getSearches}
                       className="ui button primary"
                     >
                       Get stop and searches for these co-ordinates
                     </button>
-                  </div>
+                  
                 </div>
-              )}
+              </div>
 
               {!(this.state.selectedSearchData.length === 0) && (
                 <div className="ui row">

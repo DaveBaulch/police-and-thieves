@@ -180,20 +180,20 @@ class LocationPage extends React.Component {
 
           <div className="ui segment">
             <div className="ui grid">
-              {!this.state.searchDataLoaded && (
-                <div className="ui row">
-                  <div className="five wide column">
+              <div className="ui row">
+                <div className="five wide column">
+                  {!this.state.searchDataLoaded && (
                     <button
                       onClick={this.getSearches}
                       className="ui button primary"
                     >
                       Get stop and searches for these co-ordinates
                     </button>
-                  </div>
+                  )}
                 </div>
-              )}
+              </div>
 
-              {!(this.state.selectedSearchData.length === 0) && (
+              {!(this.state.selectedSearchData.length === 0) && (            
                 <div className="ui row">
                   <div className="twelve wide column">
                     <h2>Filter results</h2>
@@ -211,88 +211,87 @@ class LocationPage extends React.Component {
                     />
                   </div>
                 </div>
+                
               )}
 
-              {!(this.state.selectedSearchData.length === 0) && (
-                <div className="ui row">
-                  <div
-                    className="six wide column"
-                    style={{ listStyle: 'none' }}
-                  >
-                    {this.state.searchDataLoaded && (
-                      <Searches
-                        searches={this.state.filteredSearchData}
-                        onSearchItemSelect={this.onSearchItemSelect}
-                      />
-                    )}
-                  </div>
-                  <div className="ten wide column searches">
-                    <h3>
-                      Searches by offence type -{' '}
-                      {this.state.filterTerms.offenceFilterTerm}
-                    </h3>
-                    <Doughnut
-                      data={{
-                        labels: ['Male', 'Female'],
-                        datasets: [
-                          {
-                            label: 'Crime by gender',
-                            data: this.getOffenceData(),
-                            backgroundColor: [
-                              'rgba(255, 99, 132, 0.2)',
-                              'rgba(54, 162, 235, 0.2)'
-                            ],
-                            borderColor: [
-                              'rgba(255, 99, 132, 1)',
-                              'rgba(54, 162, 235, 1)'
-                            ],
-                            borderWidth: 1
-                          }
-                        ]
-                      }}
+              <div className="ui row">
+                <div className="six wide column" style={{ listStyle: 'none' }}>
+                  {this.state.searchDataLoaded && (
+                    <Searches
+                      searches={this.state.filteredSearchData}
+                      onSearchItemSelect={this.onSearchItemSelect}
                     />
-
-                    <h3>Overall searches by gender</h3>
-                    <Doughnut
-                      data={{
-                        labels: ['Male', 'Female'],
-                        datasets: [
-                          {
-                            label: 'Crime by gender',
-                            data: [
-                              this.state.maleSearches,
-                              this.state.femaleSearches
-                            ],
-                            backgroundColor: [
-                              'rgba(255, 99, 132, 0.2)',
-                              'rgba(54, 162, 235, 0.2)'
-                            ],
-                            borderColor: [
-                              'rgba(255, 99, 132, 1)',
-                              'rgba(54, 162, 235, 1)'
-                            ],
-                            borderWidth: 1
-                          }
-                        ]
-                      }}
-                    />
-
-                    <Modal
-                      isOpen={this.state.modalIsOpen}
-                      onAfterOpen={this.afterOpenModal}
-                      onRequestClose={this.closeModal}
-                      style={this.state.customStyles}
-                      contentLabel="Example Modal"
-                    >
-                      <button onClick={this.closeModal}>close</button>
-                      <h2>Search details</h2>
-                      <SearchesItemDetail
-                        selectedSearchItem={this.state.selectedSearchItem}
-                      />
-                    </Modal>
-                  </div>
+                  )}
                 </div>
-              )}
+                <div className="ten wide column searches">
+                  {!(this.state.selectedSearchData.length === 0) && (
+                    <React.Fragment>
+                      <h3>
+                        Searches by offence type -{' '}
+                        {this.state.filterTerms.offenceFilterTerm}
+                      </h3>
+                      <Doughnut
+                        data={{
+                          labels: ['Male', 'Female'],
+                          datasets: [
+                            {
+                              label: 'Crime by gender',
+                              data: this.getOffenceData(),
+                              backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)'
+                              ],
+                              borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)'
+                              ],
+                              borderWidth: 1
+                            }
+                          ]
+                        }}
+                      />
+
+                      <h3>Overall searches by gender</h3>
+                      <Doughnut
+                        data={{
+                          labels: ['Male', 'Female'],
+                          datasets: [
+                            {
+                              label: 'Crime by gender',
+                              data: [
+                                this.state.maleSearches,
+                                this.state.femaleSearches
+                              ],
+                              backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)'
+                              ],
+                              borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)'
+                              ],
+                              borderWidth: 1
+                            }
+                          ]
+                        }}
+                      />
+                    </React.Fragment>
+                  )}
+                  <Modal
+                    isOpen={this.state.modalIsOpen}
+                    onAfterOpen={this.afterOpenModal}
+                    onRequestClose={this.closeModal}
+                    style={this.state.customStyles}
+                    contentLabel="Example Modal"
+                  >
+                    <button onClick={this.closeModal}>close</button>
+                    <h2>Search details</h2>
+                    <SearchesItemDetail
+                      selectedSearchItem={this.state.selectedSearchItem}
+                    />
+                  </Modal>
+                </div>
+              </div>
             </div>
           </div>
         </div>
