@@ -107,7 +107,7 @@ class SearchesPage extends React.Component {
         <div>
           <div className="ui container">
             <h1>
-              {this.props.location.state.selectedForceName} searches for the
+              {this.props.location.state.selectedForceName} - searches for the
               last month
             </h1>
             <Link to={'/'} className="ui button primary">
