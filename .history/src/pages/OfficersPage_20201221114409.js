@@ -74,18 +74,19 @@ class OfficerPage extends React.Component {
   render() {
     if (this.state.dataLoaded) {
       return (
-        <div className="ui container">
+        <div>
           <h1>
             Officer Details - {this.props.location.state.selectedForceName}
           </h1>
-
-          <div className="ui segment">
-            <Link to={'/'} className="ui button primary">
-              Back to homepage
-            </Link>
-            <br />
-            <br />
-            {this.renderedOfficers()}
+          <div className="ui container">
+            <div className="ui segment">
+              <Link to={'/'} className="ui button primary">
+                Back to homepage
+              </Link>
+              <br />
+              <br />
+              {this.renderedOfficers()}
+            </div>
           </div>
         </div>
       );

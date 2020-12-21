@@ -78,15 +78,12 @@ class OfficerPage extends React.Component {
           <h1>
             Officer Details - {this.props.location.state.selectedForceName}
           </h1>
-
-          <div className="ui segment">
-            <Link to={'/'} className="ui button primary">
-              Back to homepage
-            </Link>
-            <br />
-            <br />
-            {this.renderedOfficers()}
-          </div>
+          <Link to={'/'} className="ui button primary">
+            Back to homepage
+          </Link>
+          <br />
+          <br />
+          {this.renderedOfficers()}
         </div>
       );
     }

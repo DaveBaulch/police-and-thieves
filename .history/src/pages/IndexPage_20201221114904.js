@@ -116,7 +116,7 @@ class IndexPage extends React.Component {
                       }}
                       className="ui button primary"
                     >
-                      View search data for this force
+                      View search details for this force
                     </Link>
                   )}
                 </div>

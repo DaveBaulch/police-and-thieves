@@ -114,56 +114,56 @@ class SearchesPage extends React.Component {
               Back to homepage
             </Link>
 
-            <div className="ui segment">
-              <div className="ui grid">
-                <div className="ui row">
-                  <div className="sixteen wide column">
-                    <h2>Self-defined ethnicity</h2>
 
-                    <Bar
-                      options={{
-                        scales: {
-                          xAxes: [
-                            {
-                              ticks: {
-                                autoSkip: false
-                              }
-                            }
-                          ]
-                        },
-                        responsive: true
-                      }}
-                      data={{
-                        labels: this.state.ethnicityOptions,
-                        datasets: [
+          <div className="ui segment"></div>
+            <div className="ui grid">
+              <div className="ui row">
+                <div className="sixteen wide column">
+                  <h2>Self-defined ethnicity</h2>
+
+                  <Bar
+                    options={{
+                      scales: {
+                        xAxes: [
                           {
-                            label: 'Searchs by ethnicity',
-                            data: this.getEthnicityData(),
-                            backgroundColor: 'rgba(75,192,192,1)',
-                            borderColor: 'rgba(0,0,0,1)',
-                            borderWidth: 2
+                            ticks: {
+                              autoSkip: false
+                            }
                           }
                         ]
-                      }}
+                      },
+                      responsive: true
+                    }}
+                    data={{
+                      labels: this.state.ethnicityOptions,
+                      datasets: [
+                        {
+                          label: 'Searchs by ethnicity',
+                          data: this.getEthnicityData(),
+                          backgroundColor: 'rgba(75,192,192,1)',
+                          borderColor: 'rgba(0,0,0,1)',
+                          borderWidth: 2
+                        }
+                      ]
+                    }}
+                  />
+
+                  <h3>Click on an item for more detail</h3>
+                  <ul style={{ padding: '0' }}>{this.renderedSearches()}</ul>
+
+                  <Modal
+                    isOpen={this.state.modalIsOpen}
+                    onAfterOpen={this.afterOpenModal}
+                    onRequestClose={this.closeModal}
+                    style={this.state.customStyles}
+                    contentLabel="Example Modal"
+                  >
+                    <button onClick={this.closeModal}>close</button>
+                    <h2>Search details</h2>
+                    <SearchesItemDetail
+                      selectedSearchItem={this.state.selectedSearchItem}
                     />
-
-                    <h3>Click on an item for more detail</h3>
-                    <ul style={{ padding: '0' }}>{this.renderedSearches()}</ul>
-
-                    <Modal
-                      isOpen={this.state.modalIsOpen}
-                      onAfterOpen={this.afterOpenModal}
-                      onRequestClose={this.closeModal}
-                      style={this.state.customStyles}
-                      contentLabel="Example Modal"
-                    >
-                      <button onClick={this.closeModal}>close</button>
-                      <h2>Search details</h2>
-                      <SearchesItemDetail
-                        selectedSearchItem={this.state.selectedSearchItem}
-                      />
-                    </Modal>
-                  </div>
+                  </Modal>
                 </div>
               </div>
             </div>

@@ -177,7 +177,7 @@ class LocationPage extends React.Component {
           </div>
 
           <div className="ui segment">
-            <div className="ui stackable grid">
+            <div className="ui grid">
               {!this.state.searchDataLoaded && (
                 <div className="ui row">
                   <div className="eight wide column">

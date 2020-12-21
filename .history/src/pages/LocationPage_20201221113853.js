@@ -177,7 +177,7 @@ class LocationPage extends React.Component {
           </div>
 
           <div className="ui segment">
-            <div className="ui stackable grid">
+            <div className="ui grid">
               {!this.state.searchDataLoaded && (
                 <div className="ui row">
                   <div className="eight wide column">
@@ -215,7 +215,7 @@ class LocationPage extends React.Component {
               {!(this.state.selectedSearchData.length === 0) && (
                 <div className="ui row">
                   <div
-                    className="six wide column"
+                    className="euight wide column"
                     style={{ listStyle: 'none' }}
                   >
                     {this.state.searchDataLoaded && (

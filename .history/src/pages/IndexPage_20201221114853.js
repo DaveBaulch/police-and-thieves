@@ -102,7 +102,7 @@ class IndexPage extends React.Component {
                       className="ui button primary"
                       style={{ marginBottom: 10 }}
                     >
-                      View officer data for this force
+                      View officer details for this force
                     </Link>
                   )}
 
@@ -116,7 +116,7 @@ class IndexPage extends React.Component {
                       }}
                       className="ui button primary"
                     >
-                      View search data for this force
+                      View searches for this force
                     </Link>
                   )}
                 </div>
