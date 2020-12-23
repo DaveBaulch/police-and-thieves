@@ -1,6 +1,7 @@
+import '../App.css';
 import React from 'react';
-import Searches from '../components/Searches';
-import SearchesItemDetail from '../components/SearchesItemDetail';
+import Searches from '../components/Searches/Searches';
+import SearchesItemDetail from '../components/SearchesItemDetail/SearchesItemDetail';
 import MapContainer from '../components/MapContainer';
 import FormSelect from '../components/FormSelect';
 import policeapi from '../apis/policeapi';

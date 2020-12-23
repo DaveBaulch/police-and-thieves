@@ -1,4 +1,4 @@
-const Spinner = (props) => {
+const Spinner = ({}) => {
   return (
     <div className="ui active dimmer">
       <div className="ui ig text loader">{props.message}</div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Dropdown from '../components/Dropdown';
 import policeapi from '../apis/policeapi';
+
 class IndexPage extends React.Component {
   state = {
     forces: [],

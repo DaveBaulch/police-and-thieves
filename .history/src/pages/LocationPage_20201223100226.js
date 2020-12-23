@@ -6,6 +6,7 @@ import FormSelect from '../components/FormSelect';
 import policeapi from '../apis/policeapi';
 import Modal from 'react-modal';
 import { Doughnut } from 'react-chartjs-2';
+import '../css/site.css';
 
 class LocationPage extends React.Component {
   state = {

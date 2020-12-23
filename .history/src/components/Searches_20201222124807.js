@@ -1,5 +1,5 @@
-import './Searches.css';
 import React from 'react';
+import './Searches.css';
 
 const Searches = ({ searches, onSearchItemSelect }) => {
   console.log('Props:' + searches);
