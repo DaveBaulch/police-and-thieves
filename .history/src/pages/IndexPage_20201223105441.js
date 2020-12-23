@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Dropdown from '../components/Dropdown';
-import policeapi from '../apis/policeapi';
+// import policeapi from '../apis/policeapi';
+import useData from '../../hooks/useData';
 class IndexPage extends React.Component {
   state = {
     forces: [],
@@ -12,7 +13,7 @@ class IndexPage extends React.Component {
   };
 
   onSelectChange = (event) => {
-    //console.log('Changed');
+    // console.log('Changed');
     const selectedForce =
       event.target.options[event.target.selectedIndex].value;
     //console.log(selectedForce);
@@ -26,17 +27,19 @@ class IndexPage extends React.Component {
 
     this.setState({ selectedForce: selectedForce });
 
-    policeapi
-      .get(`/forces/${selectedForce}`)
-      .then((response) => {
-        console.log(response.data);
-        this.setState({ selectedForceName: response.data.name });
-        this.setState({ selectedForceUrl: response.data.url });
-        this.setState({ selectedForceDescription: response.data.description });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    // policeapi
+    //   .get(`/forces/${selectedForce}`)
+    //   .then((response) => {
+    //     console.log(response.data);
+    //     this.setState({ selectedForceName: response.data.name });
+    //     this.setState({ selectedForceUrl: response.data.url });
+    //     this.setState({ selectedForceDescription: response.data.description });
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
+
+
   };
 
   componentDidMount() {

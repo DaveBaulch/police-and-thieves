@@ -12,7 +12,7 @@ class IndexPage extends React.Component {
   };
 
   onSelectChange = (event) => {
-    //console.log('Changed');
+    console.log('Changed');
     const selectedForce =
       event.target.options[event.target.selectedIndex].value;
     //console.log(selectedForce);
