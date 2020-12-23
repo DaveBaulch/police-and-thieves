@@ -1,0 +1,19 @@
+@media only screen and (max-width: 767px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+tyle={{ marginRight: 20 }}
