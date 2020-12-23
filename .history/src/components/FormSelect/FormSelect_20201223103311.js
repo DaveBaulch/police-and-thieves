@@ -14,7 +14,7 @@ class FormSelect extends React.Component {
     const { name, label, items } = this.props;
 
     return (
-      <React.Fragment>
+      <React.FRagment>
         <label htmlFor={name} style={{ marginRight: 10 }}>
           {label}
         </label>
@@ -33,7 +33,7 @@ class FormSelect extends React.Component {
             );
           })}
         </select>
-      </React.Fragment>
+      </React.FRagment>
     );
   }
 }

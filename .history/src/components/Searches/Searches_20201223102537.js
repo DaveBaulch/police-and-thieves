@@ -2,7 +2,7 @@ import React from 'react';
 import './Searches.css';
 
 const Searches = ({ searches, onSearchItemSelect }) => {
-  // console.log('Props:' + searches);
+  console.log('Props:' + searches);
   let searchList = null;
 
   if (searches) {

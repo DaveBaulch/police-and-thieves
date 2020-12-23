@@ -2,14 +2,14 @@ import React from 'react';
 import './Searches.css';
 
 const Searches = ({ searches, onSearchItemSelect }) => {
-  // console.log('Props:' + searches);
+  console.log('Props:' + searches);
   let searchList = null;
 
   if (searches) {
     searchList = searches.map((search, index) => {
       return (
         <li
-          key={`searches-{index}`}
+          key={`searchesindex}
           className="ui segment search-item"
           style={{ listStyle: 'none' }}
           onClick={() => onSearchItemSelect(search)}

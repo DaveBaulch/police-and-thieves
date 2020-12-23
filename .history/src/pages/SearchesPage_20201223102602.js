@@ -34,7 +34,7 @@ class SearchesPage extends React.Component {
     return this.state.selectedForceSearches.map((search, index) => {
       return (
         <li
-          key={`searches-${index}`}
+          key={`saerchesindex}
           className="ui segment search-item"
           style={{ listStyle: 'none' }}
           onClick={() => this.onSearchItemSelect(search)}
@@ -54,7 +54,7 @@ class SearchesPage extends React.Component {
       const size = this.state.selectedForceSearches.filter(
         (item) => item.self_defined_ethnicity === ethnicity
       ).length;
-      // console.log(ethnicity + ': ' + size);
+      //console.log(ethnicity + ': ' + size);
       return size;
     });
   };

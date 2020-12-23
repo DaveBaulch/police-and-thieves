@@ -54,7 +54,7 @@ class SearchesPage extends React.Component {
       const size = this.state.selectedForceSearches.filter(
         (item) => item.self_defined_ethnicity === ethnicity
       ).length;
-      // console.log(ethnicity + ': ' + size);
+      //console.log(ethnicity + ': ' + size);
       return size;
     });
   };
